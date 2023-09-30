@@ -29,11 +29,10 @@ const renderFormValidation = (state) => {
     }
 
     if (callingCodes.includes(inputNumbersValue[0])) {
-      if (inputNumbersValue[0] === '9') {
+      if (inputNumbersValue[0] === '9' || inputNumbersValue[0] === '8') {
         inputNumbersValue = '7' + inputNumbersValue;
-        console.log(inputNumbersValue)
       }
-      let firstSymbols = (inputNumbersValue[0] === '8' || inputValue[0] === '+') ? '+7' : '+7';
+      let firstSymbols = '+7';
       formattedInputValue = firstSymbols + ' ';
 
       if (inputNumbersValue.length > 1) {
@@ -57,7 +56,7 @@ const renderFormValidation = (state) => {
 
   const modalForm = document.querySelector('.modal__form');
   const formSubmitButton = document.querySelector('.contact-button[type=submit]');
-  const formFieldWebsite = document.querySelector('.form__field-website');
+  const formFieldWebsite = document.querySelector('.form__group-website');
   const inputTel = document.querySelector('.form__input[type=tel]');
 
   if (formStatus === 'invalid') {
