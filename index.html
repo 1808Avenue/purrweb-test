@@ -32,7 +32,7 @@
   </header>
 
   <main class="main">
-    <section class="warning warning--active">
+    <section class="warning warning--disabled">
       <div class="warning__inner container">
         <h4 class="warning__text">This website uses cookies to ensure you get the best experience on our website. They
           also allow us to analyze user behavior in order to constantly improve the website for you.
@@ -203,7 +203,7 @@
         </div>
         <div class="why-us__items">
           <a href="#" class="why-us__item-container">
-            <div class="why-us__item why-us__item--size-l">
+            <div class="why-us__item why-us__item--size--l">
               <div class="why-us__item-images">
                 <img class="why-us__item-img why-us__item-img-line" src="/images/section__why-us/vector-line.svg"
                   alt="line">
@@ -222,12 +222,12 @@
             </div>
           </a>
           <a href="#" class="why-us__item-container">
-            <div class="why-us__item why-us__item--size-s">
-              <img class="why-us__item-img why-us__item-img-bag--size-s" src="/images/section__why-us/bag-small.svg"
+            <div class="why-us__item why-us__item--size--s">
+              <img class="why-us__item-img why-us__item-img-bag--size--s" src="/images/section__why-us/bag-small.svg"
                 alt="bag">
-              <img class="why-us__item-img why-us__item-img-bag--size-m" src="/images/section__why-us/bag-medium.svg"
+              <img class="why-us__item-img why-us__item-img-bag--size--m" src="/images/section__why-us/bag-medium.svg"
                 alt="bag">
-              <img class="why-us__item-img why-us__item-img-bag--size-l" src="/images/section__why-us/bag-large.svg"
+              <img class="why-us__item-img why-us__item-img-bag--size--l" src="/images/section__why-us/bag-large.svg"
                 alt="bag">
               <div class="why-us__item-text why-us__item-text-left">
                 <h3 class="why-us__item-title">Harness the power of buying in bulk</h3>
@@ -239,8 +239,8 @@
             </div>
           </a>
           <a href="#" class="why-us__item-container">
-            <div class="why-us__item why-us__item--size-s">
-              <img class="why-us__item-img why-us__item-img-face--size-s" src="/images/section__why-us/face-small.svg"
+            <div class="why-us__item why-us__item--size--s">
+              <img class="why-us__item-img why-us__item-img-face--size--s" src="/images/section__why-us/face-small.svg"
                 alt="bag">
               <div class="why-us__item-text why-us__item-text-left">
                 <h3 class="why-us__item-title">Supercharge Loyalty With Instant Cash Back</h3>
@@ -251,14 +251,14 @@
             </div>
           </a>
           <a href="#" class="why-us__item-container">
-            <div class="why-us__item why-us__item--size-l">
+            <div class="why-us__item why-us__item--size--l">
               <div class="why-us__item-text why-us__item-text-left">
                 <h3 class="why-us__item-title">Seasoned with AI and Gamification</h3>
                 <p class="why-us__item-description">AI programming creates a personalized<br>customer journey,
                   offering
                   recommendations<br>for their next purchase and optimizing<br>rewards for after purchase.</p>
               </div>
-              <img class="why-us__item-img why-us__item-img-face--size-l" src="/images/section__why-us/face-large.svg"
+              <img class="why-us__item-img why-us__item-img-face--size--l" src="/images/section__why-us/face-large.svg"
                 alt="star">
             </div>
           </a>
@@ -363,29 +363,31 @@
 
   <div class="modal modal--disabled">
     <form class="modal__form">
-      <div class="form__field">
+      <div class="form__group">
         <label class="form__label" for="name">Name <span class="form__label-asterisk">*</span></label>
         <input class="form__input" id="name" type="text" placeholder="Enter name" title="hello" required>
       </div>
-      <div class="form__field">
+      <div class="form__group">
         <label class="form__label" for="email">Email <span class="form__label-asterisk">*</span></label>
         <input class="form__input" id="email" type="email" placeholder="Enter email" required>
       </div>
-      <div class="form__field">
+      <div class="form__group">
         <img class="form__icon" src="/images/modal/ru-icon.svg" alt="ru-icon">
         <label class="form__label" for="tel">Phone number <span class="form__label-asterisk">*</span></label>
-        <input class="form__input form__input-tel" id="tel" type="tel" placeholder="+ 7 900 800 18 18"  maxlength="18" required></input>
+        <input class="form__input form__input-tel" id="tel" type="tel" placeholder="+ 7 900 800 18 18" minlength="18" maxlength="18" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required>
       </div>
-      <div class="form__field">
+      <div class="form__group">
         <label class="form__label" for="company">Company</label>
         <input class="form__input" id="company" type="text" placeholder="Enter company">
       </div>
-      <div class="form__field form__field-website">
+      <div class="form__group form__group-website">
         <label class="form__label" for="website">Website/Store URL</label>
         <input class="form__input" id="website" type="text" placeholder="Enter Website/Store URL">
       </div>
-      <p class="form__privacy">By submitting this form you are agreeing to Budss’s 
-        <a class="form__privacy-link" href="#">Privacy Policy</a> and <a class="form__privacy-link" href="#">Terms of Use</a></p>
+      <p class="form__privacy">By submitting this form you are agreeing to Budss’s
+        <a class="form__privacy-link" href="#">Privacy Policy</a> and <a class="form__privacy-link" href="#">Terms of
+          Use</a>
+      </p>
       <div class="contact-button-container">
         <button class="contact-button contact-button--outline--disabled" type="submit">Contact sales</button>
       </div>
