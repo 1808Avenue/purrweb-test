@@ -70,19 +70,14 @@ const init = () => {
 
     input.addEventListener('input', (event) => {
       const currentInput = event.target;
-      const currentInputValue = currentInput.value;
       const currentInputId = currentInput.id;
-
-      const currentInputIsEmpty = currentInputValue === '';
       const currentInputIsValid = currentInput.validity.valid;
-
-
-      if (currentInputIsEmpty && !currentInputIsValid || !currentInputIsValid) {
-        state.form.fields[currentInputId] = 'error-invalid';
-      } else if (currentInputIsValid) {
+      
+      console.log(currentInput.validity.valid)
+      if (currentInputIsValid) {
         state.form.fields[currentInputId] = 'valid';
       } else {
-        state.form.fields[currentInputId] = '';
+        state.form.fields[currentInputId] = 'error-invalid';
       }
 
       const formFields = state.form.fields;
@@ -90,15 +85,15 @@ const init = () => {
       const formIsValid = requiredFieldsIds.filter((id) => formFields[id] === 'valid').length > 2 ? 'valid' : 'invalid';
 
       state.form.status = formIsValid;
+      console.log(state.form.fields)
       render(state);
     })
 
     input.addEventListener('blur', (event) => {
       const currentInput = event.target;
-      const currentInputValue = currentInput.value;
       const currentInputId = currentInput.id;
 
-      const currentInputIsEmpty = currentInputValue === '';
+      const currentInputIsEmpty = currentInput.value === '';
       const currentInputIsRequired = currentInput.required;
 
       const formFields = state.form.fields;
@@ -108,11 +103,8 @@ const init = () => {
 
       if (currentInputIsRequired && currentInputIsEmpty) {
         state.form.fields[currentInputId] = 'error-required';
-      } else if (currentInputId === 'tel') {
-        if (currentInputValue.length < 18) {
-          state.form.fields[currentInputId] = 'error-invalid';
-        }
-      }
+      } 
+
       state.form.status = formIsValid;
       render(state);
     });
